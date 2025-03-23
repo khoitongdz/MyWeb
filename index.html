@@ -17,34 +17,47 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-image: url('https://images-ext-1.discordapp.net/external/GL0gT83x2c4C9iUcKnLT2SnBfARllS5xOW9Sk_0oaXA/https/cdn.nekotina.com/images/lfD62QXnD.jpg?format=webp&width=403&height=569'); 
+            background-image: url('https://images-ext-1.discordapp.net/external/GL0gT83x2c4C9iUcKnLT2SnBfARllS5xOW9Sk_0oaXA/https/cdn.nekotina.com/images/lfD62QXnD.jpg?format=webp&width=403&height=569');
             background-size: cover;
             background-position: center;
-            overflow-x: hidden;
+            overflow: hidden;
+        }
+        .web-credit {
+            color: white;
+            margin-bottom: 10px;
+        }
+        .container-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .scroll-btn {
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            padding: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+        .scroll-btn:hover {
+            background: rgba(255, 255, 255, 0.8);
         }
         .container {
             display: flex;
             gap: 20px;
             padding: 20px;
             overflow-x: auto;
-            white-space: nowrap; 
+            white-space: nowrap;
             scroll-behavior: smooth;
             max-width: 90vw;
         }
-        /* Thanh cuộn tuỳ chỉnh */
         .container::-webkit-scrollbar {
             height: 8px;
-        }
-        .container::-webkit-scrollbar-track {
-            background: #222;
-            border-radius: 10px;
         }
         .container::-webkit-scrollbar-thumb {
             background: #444;
             border-radius: 10px;
-        }
-        .container::-webkit-scrollbar-thumb:hover {
-            background: #666;
         }
         .game-box {
             display: flex;
@@ -56,11 +69,11 @@
             border-radius: 10px;
             text-align: center;
             min-width: 150px;
-            transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+            transition: transform 0.3s, background 0.3s;
         }
         .game-box:hover {
             transform: scale(1.05);
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.2);
         }
         .game-image {
             width: 80px;
@@ -75,15 +88,10 @@
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
-            transition: background 0.3s ease-in-out;
+            transition: background 0.3s;
         }
         .play-button:hover {
             background-color: darkblue;
-        }
-        .game-title {
-            color: white;
-            font-size: 14px;
-            font-weight: bold;
         }
         .fade-in {
             opacity: 0;
