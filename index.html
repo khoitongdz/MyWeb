@@ -24,12 +24,30 @@
         }
         .container {
             display: flex;
-            flex-direction: row;
             gap: 20px;
-            overflow-x: auto; /* Cho phép cuộn ngang */
             padding: 20px;
-            white-space: nowrap; /* Tránh icon xuống hàng */
+            overflow-x: auto;
+            white-space: nowrap; 
+            scroll-behavior: smooth;
+            max-width: 90vw; 
         }
+
+        /* Tuỳ chỉnh thanh cuộn */
+        .container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .container::-webkit-scrollbar-track {
+            background: #222;
+            border-radius: 10px;
+        }
+        .container::-webkit-scrollbar-thumb {
+            background: #444;
+            border-radius: 10px;
+        }
+        .container::-webkit-scrollbar-thumb:hover {
+            background: #666;
+        }
+
         .game-box {
             display: flex;
             flex-direction: column;
@@ -39,7 +57,7 @@
             padding: 15px;
             border-radius: 10px;
             text-align: center;
-            min-width: 150px; /* Đảm bảo các hộp có kích thước cố định */
+            min-width: 150px; 
         }
         .game-image {
             width: 80px;
@@ -90,12 +108,12 @@
             <div class="game-title">Server VIP Free</div>
             <img src="https://media.discordapp.net/attachments/1337658822327668776/1353265509386420225/cc334f1d-9283-4826-b6f5-97fd228edd50_1.webp?ex=67e10637&is=67dfb4b7&hm=780e25f9355ffcd9c7dcc741350ef03420bb12c2bf380dc200bd44b96a836849&=&format=webp&width=583&height=583" alt="Server VIP Free" class="game-image">
             <button class="play-button" onclick="window.location.href='https://www.roblox.com/es/games/2753915549/Blox-Fruits?privateServerLinkCode=78227368949942947685664999114478'">Play</button>
-        <!--link script-->
-                    <div class="game-box">
-            <div class="game-title">Script blox fruit</div>
-            <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" alt="Thiết bị 3" class="game-image">
-            <button class="play-button" onclick="window.location.href='https://pastefy.app/gYopAiCU/raw'">xem</button>
         </div>
+        <!-- Link Script -->
+        <div class="game-box">
+            <div class="game-title">Script blox fruit</div>
+            <img src="https://media.discordapp.net/attachments/1251722181734563925/1353274517195198494/DALLE_2025-03-23_14.49.35_-_A_bold_gaming-style_text_logo_that_says_Script_Blox_Fruit_Free._The_text_should_have_a_strong_powerful_font_with_a_red_and_black_color_scheme._The.webp?ex=67e10e9b&is=67dfbd1b&hm=5a149215fc00fc673367273f1795b6c8484c802a844701e4cae80143315df5d8&=&format=webp&width=583&height=583" alt="Script" class="game-image">
+            <button class="play-button" onclick="window.location.href='https://pastefy.app/gYopAiCU/raw'">Xem</button>
         </div>
     </div>
 </body>
