@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Web</title>
+    <title>ugphonemodbykhoitongdz</title>
     <style>
         * {
             margin: 0;
@@ -17,7 +17,7 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-image: url('https://images-ext-1.discordapp.net/external/9jPV9qGpXZS016tjkoTKR9oi-BWzg3lPIwc9YgXPxuI/%3Fsize%3D2048/https/cdn.discordapp.com/banners/1205613504808357888/a_fef2751c07efa7a14abe0e968bdac50f.gif?width=432&height=244');
+            background-image: url('https://tse3.mm.bing.net/th?id=OIP.zvyEeIoNtewdceb0A278YAHaEK&pid=Api&P=0&h=220'); 
             background-size: cover;
             background-position: center;
         }
@@ -25,7 +25,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 30px;
+            gap: 50px;
         }
         .web-credit {
             position: absolute;
@@ -38,23 +38,24 @@
         .device {
             display: flex;
             align-items: center;
-            gap: 15px;
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
+            gap: 30px;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            transform: scale(1.6);
         }
         .device img {
-            width: 60px;
-            height: 60px;
-            border-radius: 5px;
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
         }
         .play-button {
             background-color: blue;
             color: white;
-            padding: 12px 18px;
+            padding: 18px 25px;
             border: none;
-            border-radius: 5px;
-            font-size: 16px;
+            border-radius: 8px;
+            font-size: 20px;
             cursor: pointer;
         }
         .play-button:hover {
@@ -63,23 +64,37 @@
     </style>
 </head>
 <body>
-    <div class="web-credit">code:khoitong</div>
+    <div class="web-credit">code:khoitongdz</div>
     <div class="container">
         <div class="device">
             <img src="https://cdn.now.gg/apps-content/10417/icon/chasers.png" alt="Thiết Bị 1">
-            <button class="play-button" onclick="openDevice1()">Play</button>
+            <button class="play-button" onclick="runObfuscatedCode1()">Play</button>
         </div>
         <div class="device">
             <img src="https://cdn.now.gg/assets-opt/_next/image?url=https%3A%2F%2Fcdn.now.gg%2Fassets-opt%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fcdn.now.gg%252Fapps-content%252F10512%252Ficon%252Fthe-walking-dead-survivors.png%26w%3D256%26q%3D80&w=1440&q=70" alt="Thiết Bị 2">
-            <button class="play-button" onclick="openDevice2()">Play</button>
+            <button class="play-button" onclick="runObfuscatedCode2()">Play</button>
         </div>
     </div>
     <script>
-        function openDevice1() {
-            window.location.href = 'https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUFxIdDhcIHlRKS09KTFQYExoIHgkIVRMPFhc=';
+        function complexObfuscation(str) {
+            let step1 = str.split('').map(c => c.charCodeAt(0) + 3).join('-');
+            let step2 = btoa(step1);
+            return step2.split('').reverse().join('');
         }
-        function openDevice2() {
-            window.location.href = 'https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUHBoXGgMCVgsXGgJWDx4YExUUFxQcAlYXEhYSDx4fVEpLTkpJVA8THlYMGhcQEhUcVh8eGh9WCA4JDRINFAkIVRMPFhc=';
+        function complexDeobfuscation(str) {
+            let step1 = str.split('').reverse().join('');
+            let step2 = atob(step1);
+            return step2.split('-').map(c => String.fromCharCode(c - 3)).join('');
+        }
+        function runObfuscatedCode1() {
+            let encodedUrl = "K2pXHl9eRVpUVg=="; 
+            let url = complexDeobfuscation(encodedUrl);
+            window.location.href = url;
+        }
+        function runObfuscatedCode2() {
+            let encodedUrl = "L3pZIl5gRlZTWA=="; 
+            let url = complexDeobfuscation(encodedUrl);
+            window.location.href = url;
         }
     </script>
 </body>
