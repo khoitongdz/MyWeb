@@ -20,12 +20,15 @@
             background-image: url('https://images-ext-1.discordapp.net/external/wFogJu81Z4Nfx4fZgA67ad0h7uuggs39-o8Gi3Fj8XQ/https/cdn.nekotina.com/images/DHMko9UiY.png?format=webp&quality=lossless&width=562&height=583'); 
             background-size: cover;
             background-position: center;
+            overflow-x: hidden;
         }
         .container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex-direction: row;
             gap: 20px;
+            overflow-x: auto; /* Cho phép cuộn ngang */
+            padding: 20px;
+            white-space: nowrap; /* Tránh icon xuống hàng */
         }
         .game-box {
             display: flex;
@@ -33,45 +36,36 @@
             align-items: center;
             gap: 10px;
             background: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 15px;
-            width: 250px;
+            padding: 15px;
+            border-radius: 10px;
             text-align: center;
+            min-width: 150px; /* Đảm bảo các hộp có kích thước cố định */
         }
         .game-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 20px;
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
         }
         .play-button {
-            background-color: green;
+            background-color: blue;
             color: white;
-            padding: 10px 30px;
+            padding: 10px 20px;
             border: none;
-            border-radius: 10px;
+            border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
         }
         .play-button:hover {
-            background-color: darkgreen;
-        }
-        .top-text {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
+            background-color: darkblue;
         }
         .game-title {
             color: white;
-            font-size: 18px;
+            font-size: 14px;
             font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <div class="top-text">code: khoitongdz</div>
     <div class="container">
         <!-- Thiết bị 1 -->
         <div class="game-box">
@@ -83,11 +77,11 @@
         <div class="game-box">
             <div class="game-title">Thiết bị 2</div>
             <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" alt="Thiết bị 2" class="game-image">
-            <button class="play-button" onclick="window.location.href='YOUR_LINK_HERE'">Play</button> <!-- Thêm link vào đây -->
+            <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUHBoXGgMCVgsXGgJWDx4YExUUFxQcAlYXEhYSDx4fVEpLTkpJVA8THlYMGhcQEhUcVh8eGh9WCA4JDRINFAkIVRMPFhc=">Play</button>
         </div>
         <!-- Thiết bị 3 -->
         <div class="game-box">
-            <div class="game-title">Thiết bị 3 (Cần VPN)</div>
+            <div class="game-title">Thiết bị 3 (cần VPN)</div>
             <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" alt="Thiết bị 3" class="game-image">
             <button class="play-button" onclick="window.location.href='https://now.gg/apps/discord-inc-/1430/discord-talk-chat-hang-out.html'">Play</button>
         </div>
@@ -96,6 +90,12 @@
             <div class="game-title">Server VIP Free</div>
             <img src="https://media.discordapp.net/attachments/1337658822327668776/1353265509386420225/cc334f1d-9283-4826-b6f5-97fd228edd50_1.webp?ex=67e10637&is=67dfb4b7&hm=780e25f9355ffcd9c7dcc741350ef03420bb12c2bf380dc200bd44b96a836849&=&format=webp&width=583&height=583" alt="Server VIP Free" class="game-image">
             <button class="play-button" onclick="window.location.href='https://www.roblox.com/es/games/2753915549/Blox-Fruits?privateServerLinkCode=78227368949942947685664999114478'">Play</button>
+        <!--link script-->
+                    <div class="game-box">
+            <div class="game-title">Script blox fruit</div>
+            <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" alt="Thiết bị 3" class="game-image">
+            <button class="play-button" onclick="window.location.href='https://pastefy.app/gYopAiCU/raw'">xem</button>
+        </div>
         </div>
     </div>
 </body>
