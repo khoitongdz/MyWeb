@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ugphone Mod Web</title>
+    <title>Custom Web</title>
     <style>
         * {
             margin: 0;
@@ -17,59 +17,64 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-image: url('https://img.doppiocdn.com/thumbs/1742700390/154374751_webp');
+            background-image: url('LINK_ANH_CAY_DAI_THU'); /* Thay bằng ảnh nền */
             background-size: cover;
             background-position: center;
-            color: white;
-            text-align: center;
         }
-        .web-info {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            font-size: 14px;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
-        .buttons-container {
+        .container {
             display: flex;
-            gap: 15px;
-            margin-top: 20px;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .game-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .game-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
         }
         .play-button {
-            background-color: #007BFF;
+            background-color: blue;
             color: white;
-            padding: 15px 30px;
-            font-size: 18px;
+            padding: 10px 20px;
             border: none;
-            border-radius: 10px;
+            border-radius: 5px;
+            font-size: 16px;
             cursor: pointer;
         }
         .play-button:hover {
-            background-color: #0056b3; 
+            background-color: darkblue;
         }
-        .device-text {
+        .top-text {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: white;
             font-size: 16px;
-            margin-bottom: 10px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-
-    <div class="web-info">Code:khoitongdz</div>
-
-    <div class="device-text">Thiết bị 1</div>
-    
-    <div class="buttons-container">
-        <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUFxIdDhcIHlRKS09KTFQYExoIHgkIVRMPFhc='">
-            Play
-        </button>
-
-        <button class="play-button" onclick="window.location.href='https://www.roblox.com/es/games/2753915549/Blox-Fruits?privateServerLinkCode=78227368949942947685664999114478'">
-            Play Server VIP
-        </button>
+    <div class="top-text">Web được tạo bởi khoitongdz</div>
+    <div class="container">
+        <!-- Thiết bị 1 -->
+        <div class="game-box">
+            <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" alt="Thiết bị 1" class="game-image">
+            <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUFxIdDhcIHlRKS09KTFQYExoIHgkIVRMPFhc='">Play</button>
+        </div>
+        <!-- Server VIP -->
+        <div class="game-box">
+            <img src="https://media.discordapp.net/attachments/1337658822327668776/1353265509386420225/cc334f1d-9283-4826-b6f5-97fd228edd50_1.webp?ex=67e10637&is=67dfb4b7&hm=780e25f9355ffcd9c7dcc741350ef03420bb12c2bf380dc200bd44b96a836849&=&format=webp&width=583&height=583" alt="Server VIP" class="game-image">
+            <button class="play-button" onclick="window.location.href='https://www.roblox.com/es/games/2753915549/Blox-Fruits?privateServerLinkCode=78227368949942947685664999114478'">Play</button>
+        </div>
     </div>
-
 </body>
 </html>
