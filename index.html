@@ -27,12 +27,12 @@
             gap: 20px;
             padding: 20px;
             overflow-x: auto;
-            white-space: nowrap; 
+            white-space: nowrap;
             scroll-behavior: smooth;
-            max-width: 90vw; 
+            max-width: 90vw;
         }
 
-        /* Tuỳ chỉnh thanh cuộn */
+        /* Hiệu ứng cuộn */
         .container::-webkit-scrollbar {
             height: 8px;
         }
@@ -48,22 +48,34 @@
             background: #666;
         }
 
+        /* Cải thiện UI */
         .game-box {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 10px;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.7);
             padding: 15px;
-            border-radius: 10px;
+            border-radius: 12px;
             text-align: center;
-            min-width: 150px; 
+            min-width: 160px;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
+        .game-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+        }
+
         .game-image {
             width: 80px;
             height: 80px;
             border-radius: 10px;
+            transition: transform 0.2s;
         }
+        .game-box:hover .game-image {
+            transform: scale(1.1);
+        }
+
         .play-button {
             background-color: blue;
             color: white;
@@ -72,32 +84,53 @@
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
         }
         .play-button:hover {
             background-color: darkblue;
+            transform: scale(1.05);
         }
         .game-title {
             color: white;
             font-size: 14px;
             font-weight: bold;
         }
+
+        /* Hiệu ứng fade-in khi tải trang */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .game-box {
+                min-width: 90%;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="web-credit">code:khoitongdz Server 
-Discord: https://discord.gg/w26VGWmMPb</div>
-    <div class="container">
+    <div class="web-credit">code:khoitongdz | Discord: <a href="https://discord.gg/w26VGWmMPb" style="color: lightblue;">Join</a></div>
+
+    <div class="container fade-in">
         <!-- Thiết bị 1 -->
         <div class="game-box">
             <div class="game-title">Device 1</div>
             <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" alt="Thiết bị 1" class="game-image">
             <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUFxIdDhcIHlRKS09KTFQYExoIHgkIVRMPFhc='">Play</button>
-        </div>
-        <!-- Thiết bị 2 -->
-        <div class="game-box">
-            <div class="game-title">Device 2</div>
-            <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" alt="Device 2" class="game-image">
-            <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUHBoXGgMCVgsXGgJWDx4YExUUFxQcAlYXEhYSDx4fVEpLTkpJVA8THlYMGhcQEhUcVh8eGh9WCA4JDRINFAkIVRMPFhc='">Play</button>
         </div>
         <!-- Server VIP -->
         <div class="game-box">
@@ -108,14 +141,13 @@ Discord: https://discord.gg/w26VGWmMPb</div>
         <!-- Link Script -->
         <div class="game-box">
             <div class="game-title">Script blox fruit</div>
-            <img src="https://media.discordapp.net/attachments/1251722181734563925/1353274517195198494/DALLE_2025-03-23_14.49.35_-_A_bold_gaming-style_text_logo_that_says_Script_Blox_Fruit_Free._The_text_should_have_a_strong_powerful_font_with_a_red_and_black_color_scheme._The.webp?ex=67e10e9b&is=67dfbd1b&hm=5a149215fc00fc673367273f1795b6c8484c802a844701e4cae80143315df5d8&=&format=webp&width=583&height=583" alt="Script" class="game-image">
-           <button class="play-button" onclick="window.location.href='https://pastefy.app/gYopAiCU/raw'">Xem</button>
-             <!--rUi-->
-        <div class="game-box">
+            <img src="https://media.discordapp.net/attachments/1251722181734563925/1353274517195198494/DALLE_2025-03-23_14.49.35_-_A_bold_gaming-style_text_logo_that_says_Script_Blox_Fruit_Free.webp" alt="Script" class="game-image">
+          <button class="play-button" onclick="window.location.href='https://pastefy.app/gYopAiCU/raw'">Xem</button>
+             <!-- Server Discord -->
+            <div class="game-box">
             <div class="game-title">Server Discord</div>
-            <img src="https://cdn.now.gg/assets-opt/_next/image?url=https%3A%2F%2Fcdn.now.gg%2Fassets-opt%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fcdn.now.gg%252Fapps-content%252Fcom.discord%252Ficon%252Fdiscord-talk-chat-hang-out.png%26w%3D256%26q%3D80&w=1440&q=70" alt="Server Discord" class="game-image">
-            <button class="play-button" onclick="window.location.href='https://discord.gg/w26VGWmMPb'">Tham gia</button>
-        </div>
+            <img src="https://cdn.now.gg/assets-opt/_next/image?url=https%3A%2F%2Fcdn.now.gg%2Fapps-content%2Fcom.discord%2Ficon%2Fdiscord-talk-chat-hang-out.png&w=1440&q=70" alt="Server Discord" class="game-image">
+            <button class="play-button" onclick="window.open('https://discord.gg/w26VGWmMPb', '_blank')">Tham gia</button>
         </div>
     </div>
 </body>
