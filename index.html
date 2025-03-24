@@ -20,7 +20,7 @@
             background-image: url('https://images-ext-1.discordapp.net/external/GL0gT83x2c4C9iUcKnLT2SnBfARllS5xOW9Sk_0oaXA/https/cdn.nekotina.com/images/lfD62QXnD.jpg?format=webp&width=403&height=569'); 
             background-size: cover;
             background-position: center;
-            overflow-x: hidden;
+            overflow: hidden;
         }
         .container {
             display: flex;
@@ -31,7 +31,6 @@
             scroll-behavior: smooth;
             max-width: 90vw;
         }
-        /* Thanh cuộn tuỳ chỉnh */
         .container::-webkit-scrollbar {
             height: 8px;
         }
@@ -56,11 +55,13 @@
             border-radius: 10px;
             text-align: center;
             min-width: 150px;
-            transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
         }
         .game-box:hover {
-            transform: scale(1.05);
+            transform: scale(1.05) rotate(1deg);
             background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
         }
         .game-image {
             width: 80px;
@@ -68,17 +69,20 @@
             border-radius: 10px;
         }
         .play-button {
-            background-color: blue;
+            background: linear-gradient(45deg, blue, cyan);
             color: white;
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
-            transition: background 0.3s ease-in-out;
+            transition: background 0.3s ease-in-out, transform 0.1s;
         }
         .play-button:hover {
-            background-color: darkblue;
+            background: linear-gradient(45deg, darkblue, lightblue);
+        }
+        .play-button:active {
+            transform: scale(0.95);
         }
         .game-title {
             color: white;
@@ -88,7 +92,7 @@
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
-            animation: fadeIn 0.5s forwards;
+            animation: fadeIn 0.5s forwards ease-out;
         }
         @keyframes fadeIn {
             to {
