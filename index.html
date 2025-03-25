@@ -28,12 +28,15 @@
             top: 10px;
             right: 10px;
             padding: 10px;
-            background: rgba(0, 0, 0, 0.3); 
+            background: rgba(0, 0, 0, 0.5); 
             color: white;
             border: none;
             border-radius: 10px;
             cursor: pointer;
-            backdrop-filter: blur(5px); 
+            backdrop-filter: blur(10px);
+        }
+        .dark-mode-toggle:hover {
+            background: rgba(0, 0, 0, 0.3);
         }
         .container {
             display: flex;
@@ -101,20 +104,6 @@
         .play-button:active::after {
             transform: translate(-50%, -50%) scale(1.5);
         }
-        .dark-mode-toggle {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            padding: 10px;
-            background: #333;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .dark-mode-toggle:hover {
-            background: #555;
-        }
         .light-mode body {
             background: white;
             color: black;
@@ -143,24 +132,7 @@
 <div class="web-credit">
     Code:khoitongdz | Server Discord: 
     <a href="https://discord.gg/w26VGWmMPb" target="_blank" style="color: snow white; text-decoration: none;">Tham gia</a>
-</div>
-
-    <div class="container fade-in">
-        <div class="game-box">
-            <div class="game-title">Device 1</div>
-            <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" alt="Device 1" class="game-image">
-            <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUFxIdDhcIHlRKS09KTFQYExoIHgkIVRMPFhc='">Play</button>
-        </div>
-        <div class="game-box">
-            <div class="game-title">Device 2</div>
-            <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" alt="Device 2" class="game-image">
-            <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUHBoXGgMCVgsXGgJWDx4YExUUFxQcAlYXEhYSDx4fVEpLTkpJVA8THlYMGhcQEhUcVh8eGh9WCA4JDRINFAkIVRMPFhc='">Play</button>
-        </div>
-        <div class="game-box">
-            <div class="game-title">Server VIP Free</div>
-            <img src="https://tse1.mm.bing.net/th?id=OVP.JXeiWKksg37_t2sCDjJPjgHgFo&pid=Api&h=360&w=480&c=7&rs=1" alt="Server VIP Free" class="game-image">
-            <button class="play-button" onclick="window.location.href='https://www.roblox.com/es/games/2753915549/Blox-Fruits?privateServerLinkCode=78227368949942947685664999114478'">Play</button>
-        </div>
+</div> 
         <div class="game-box">
             <div class="game-title">Script blox fruit & Executor</div>
             <img src="https://media.discordapp.net/attachments/1321869620881129566/1353724109657473107/66713b1a-eaf2-4915-bf92-0abd1ddc2fd6.webp?ex=67e2b152&is=67e15fd2&hm=b11d8d86c5f62682b6bc6b4eabc0bfc8dbb4402322c4aff201a6b848cbfd9bfe&=&format=webp&width=500&height=500" alt="Script" class="game-image">
@@ -180,18 +152,6 @@
         if (localStorage.getItem("darkMode") === "off") {
             document.body.classList.add("light-mode");
             document.querySelector(".dark-mode-toggle").textContent = "☀️";
-        }
-
-        function showRipple(event, button) {
-            let ripple = document.createElement("span");
-            ripple.classList.add("ripple");
-            button.appendChild(ripple);
-            let rect = button.getBoundingClientRect();
-            ripple.style.left = `${event.clientX - rect.left}px`;
-            ripple.style.top = `${event.clientY - rect.top}px`;
-            setTimeout(() => {
-                ripple.remove();
-            }, 600);
         }
     </script>
 </body>
