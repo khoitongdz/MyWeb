@@ -29,32 +29,69 @@
         }
         .container {
             display: flex;
+            gap: 20px;
+            padding: 20px;
+            overflow-x: auto;
+            white-space: nowrap;
+            scroll-behavior: smooth;
+            max-width: 90vw;
+        }
+        .game-box {
+            display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        .input-container {
-            display: flex;
             gap: 10px;
-        }
-        input {
-            padding: 8px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            width: 250px;
-            outline: none;
-        }
-        .update-bg-button {
-            padding: 8px 12px;
-            background: linear-gradient(45deg, blue, cyan);
-            color: white;
-            border: none;
-            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 150px;
+            transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
             cursor: pointer;
         }
-        .update-bg-button:hover {
+        .game-box:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4);
+        }
+        .game-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .game-box:hover .game-image {
+            transform: scale(1.2);
+        }
+        .play-button {
+            position: relative;
+            background: linear-gradient(45deg, blue, cyan);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .play-button::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+        .play-button:hover {
             background: linear-gradient(45deg, darkblue, lightblue);
+        }
+        .play-button:active::after {
+            transform: translate(-50%, -50%) scale(1.5);
         }
         .dark-mode-toggle {
             position: fixed;
@@ -70,64 +107,57 @@
         .dark-mode-toggle:hover {
             background: #555;
         }
-        .game-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 20px;
-            width: 300px;
-            text-align: center;
+        .light-mode body {
+            background: white;
+            color: black;
         }
-        .game-title {
-            margin-bottom: 10px;
-            font-size: 18px;
-            font-weight: bold;
+        .light-mode .game-box {
+            background: rgba(0, 0, 0, 0.1);
         }
-        .game-image {
-            width: 100%;
-            border-radius: 5px;
+        .light-mode .game-box:hover {
+            background: rgba(0, 0, 0, 0.2);
         }
-        .play-button {
-            margin-top: 10px;
-            padding: 8px 12px;
-            background: red;
+        .light-mode .play-button {
+            background: linear-gradient(45deg, red, orange);
+        }
+        .light-mode .play-button:hover {
+            background: linear-gradient(45deg, darkred, darkorange);
+        }
+        .light-mode .dark-mode-toggle {
+            background: black;
             color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .play-button:hover {
-            background: darkred;
         }
     </style>
 </head>
 <body>
-    <div class="web-credit">
-        Code: khoitongdz | Server Discord: 
-        <a href="https://discord.gg/w26VGWmMPb" target="_blank" style="color: red; text-decoration: none;">Tham gia</a>
-    </div>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+
+<div class="web-credit">
+    Code:khoitongdz | Server Discord: 
+    <a href="https://discord.gg/w26VGWmMPb" target="_blank" style="color: snow white; text-decoration: none;">Tham gia</a>
+</div>
 
     <div class="container fade-in">
         <div class="game-box">
-            <div class="game-title">Device 1 (ko cần VPN)</div>
+            <div class="game-title">Device 1</div>
             <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" alt="Device 1" class="game-image">
             <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUFxIdDhcIHlRKS09KTFQYExoIHgkIVRMPFhc='">Play</button>
         </div>
         <div class="game-box">
-            <div class="game-title">Device 2 (ko cần VPN)</div>
+            <div class="game-title">Device 2</div>
             <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" alt="Device 2" class="game-image">
             <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUHBoXGgMCVgsXGgJWDx4YExUUFxQcAlYXEhYSDx4fVEpLTkpJVA8THlYMGhcQEhUcVh8eGh9WCA4JDRINFAkIVRMPFhc='">Play</button>
         </div>
         <div class="game-box">
-            <div class="game-title">Script Blox Fruit & Executor</div>
-            <img src="https://media.discordapp.net/attachments/1321869620881129566/1353724109657473107/66713b1a-eaf2-4915-bf92-0abd1ddc2fd6.webp" alt="Script" class="game-image">
-            <button class="play-button" onclick="window.location.href='https://khoitongdz.github.io/Executor.xyz/'">Xem</button>
+            <div class="game-title">Server VIP Free</div>
+            <img src="https://tse1.mm.bing.net/th?id=OVP.JXeiWKksg37_t2sCDjJPjgHgFo&pid=Api&h=360&w=480&c=7&rs=1" alt="Server VIP Free" class="game-image">
+            <button class="play-button" onclick="window.location.href='https://www.roblox.com/es/games/2753915549/Blox-Fruits?privateServerLinkCode=78227368949942947685664999114478'">Play</button>
         </div>
-    </div>
-     <script>
+        <div class="game-box">
+            <div class="game-title">Script blox fruit & Executor</div>
+            <img src="https://media.discordapp.net/attachments/1321869620881129566/1353724109657473107/66713b1a-eaf2-4915-bf92-0abd1ddc2fd6.webp?ex=67e2b152&is=67e15fd2&hm=b11d8d86c5f62682b6bc6b4eabc0bfc8dbb4402322c4aff201a6b848cbfd9bfe&=&format=webp&width=500&height=500" alt="Script" class="game-image">
+            <button class="play-button" onclick="window.location.href='https://khoitongdz.github.io/Executor.xyz/'">Xem</button>
+    <script>
         function toggleDarkMode() {
             document.body.classList.toggle("light-mode");
             let button = document.querySelector(".dark-mode-toggle");
@@ -139,23 +169,21 @@
                 localStorage.setItem("darkMode", "on");
             }
         }
-        function updateBackground() {
-            let imageUrl = document.getElementById("bgImageUrl").value.trim();
-            if (imageUrl) {
-                document.body.style.backgroundImage = `url('${imageUrl}')`;
-                localStorage.setItem("bgImage", imageUrl);
-            }
+        if (localStorage.getItem("darkMode") === "off") {
+            document.body.classList.add("light-mode");
+            document.querySelector(".dark-mode-toggle").textContent = "☀️";
         }
-        window.onload = function () {
-            if (localStorage.getItem("darkMode") === "off") {
-                document.body.classList.add("light-mode");
-                document.querySelector(".dark-mode-toggle").textContent = "☀️";
-            }
-            let savedBg = localStorage.getItem("bgImage");
-            if (savedBg) {
-                document.body.style.backgroundImage = `url('${savedBg}')`;
-                document.getElementById("bgImageUrl").value = savedBg;
-            }
+
+        function showRipple(event, button) {
+            let ripple = document.createElement("span");
+            ripple.classList.add("ripple");
+            button.appendChild(ripple);
+            let rect = button.getBoundingClientRect();
+            ripple.style.left = `${event.clientX - rect.left}px`;
+            ripple.style.top = `${event.clientY - rect.top}px`;
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
         }
     </script>
 </body>
