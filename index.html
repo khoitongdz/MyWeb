@@ -22,6 +22,9 @@
             color: white;
             opacity: 0;
             animation: fadeInPage 0.7s ease-in-out forwards;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         @keyframes fadeInPage {
             from { opacity: 0; transform: translateY(10px); }
@@ -29,69 +32,31 @@
         }
         .container {
             display: flex;
-            gap: 20px;
-            padding: 20px;
-            overflow-x: auto;
-            white-space: nowrap;
-            scroll-behavior: smooth;
-            max-width: 90vw;
-        }
-        .game-box {
-            display: flex;
             flex-direction: column;
             align-items: center;
             gap: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            min-width: 150px;
-            transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
-            cursor: pointer;
+            margin-top: 20px;
         }
-        .game-box:hover {
-            transform: scale(1.1);
-            background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4);
+        .input-container {
+            display: flex;
+            gap: 10px;
         }
-        .game-image {
-            width: 80px;
-            height: 80px;
-            border-radius: 10px;
-            transition: transform 0.3s;
+        input {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 250px;
         }
-        .game-box:hover .game-image {
-            transform: scale(1.2);
-        }
-        .play-button {
-            position: relative;
+        .update-bg-button {
+            padding: 8px 12px;
             background: linear-gradient(45deg, blue, cyan);
             color: white;
-            padding: 10px 20px;
             border: none;
             border-radius: 5px;
-            font-size: 16px;
             cursor: pointer;
-            overflow: hidden;
         }
-        .play-button::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.3);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            border-radius: 50%;
-            transition: transform 0.3s;
-        }
-        .play-button:hover {
+        .update-bg-button:hover {
             background: linear-gradient(45deg, darkblue, lightblue);
-        }
-        .play-button:active::after {
-            transform: translate(-50%, -50%) scale(1.5);
         }
         .dark-mode-toggle {
             position: fixed;
@@ -107,21 +72,9 @@
         .dark-mode-toggle:hover {
             background: #555;
         }
-        .light-mode body {
+        .light-mode {
             background: white;
             color: black;
-        }
-        .light-mode .game-box {
-            background: rgba(0, 0, 0, 0.1);
-        }
-        .light-mode .game-box:hover {
-            background: rgba(0, 0, 0, 0.2);
-        }
-        .light-mode .play-button {
-            background: linear-gradient(45deg, red, orange);
-        }
-        .light-mode .play-button:hover {
-            background: linear-gradient(45deg, darkred, darkorange);
         }
         .light-mode .dark-mode-toggle {
             background: black;
@@ -131,6 +84,14 @@
 </head>
 <body>
     <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+
+    <div class="container">
+        <h2>Nhập link ảnh để làm nền</h2>
+        <div class="input-container">
+            <input type="text" id="bgImageUrl" placeholder="https://images-ext-1.discordapp.net/external/YlI9FsqpWgc4GAToyWLeyIN_jalSNqgJtj3mg7ThCB8/https/cdn.nekotina.com/images/BD6k6to4P.jpg?format=webp&width=414&height=583">
+            <button class="update-bg-button" onclick="updateBackground()">Cập nhật nền</button>
+        </div>
+    </div>
 
 <div class="web-credit">
     Code:khoitongdz | Server Discord: 
@@ -169,21 +130,26 @@
                 localStorage.setItem("darkMode", "on");
             }
         }
-        if (localStorage.getItem("darkMode") === "off") {
-            document.body.classList.add("light-mode");
-            document.querySelector(".dark-mode-toggle").textContent = "☀️";
+
+        function updateBackground() {
+            let imageUrl = document.getElementById("bgImageUrl").value;
+            if (imageUrl) {
+                document.body.style.backgroundImage = `url('${imageUrl}')`;
+                localStorage.setItem("bgImage", imageUrl);
+            }
         }
 
-        function showRipple(event, button) {
-            let ripple = document.createElement("span");
-            ripple.classList.add("ripple");
-            button.appendChild(ripple);
-            let rect = button.getBoundingClientRect();
-            ripple.style.left = `${event.clientX - rect.left}px`;
-            ripple.style.top = `${event.clientY - rect.top}px`;
-            setTimeout(() => {
-                ripple.remove();
-            }, 600);
+        // Load cài đặt từ localStorage
+        window.onload = function () {
+            if (localStorage.getItem("darkMode") === "off") {
+                document.body.classList.add("light-mode");
+                document.querySelector(".dark-mode-toggle").textContent = "☀️";
+            }
+            let savedBg = localStorage.getItem("bgImage");
+            if (savedBg) {
+                document.body.style.backgroundImage = `url('${savedBg}')`;
+                document.getElementById("bgImageUrl").value = savedBg;
+            }
         }
     </script>
 </body>
