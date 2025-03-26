@@ -3,171 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📱𝐔𝐠𝐩𝐡𝐨𝐧𝐞𝐦𝐨𝐝𝐛𝐲𝐤𝐡𝐨𝐢𝐭𝐨𝐧𝐠𝐝𝐳📱</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-            transition: all 0.3s ease-in-out;
-         }
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-image: url('https://images-ext-1.discordapp.net/external/sU4P4REMZE9zS21TF4gUsa8Np23GmTxb5g446upLnIE/https/cdn.nekotina.com/images/00EsWuq9C.jpg?format=webp&width=600&height=336'); 
-            background-size: cover;
-            background-position: center;
-            overflow-x: hidden;
-         }
-        .dark-mode-toggle {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            padding: 10px;
-            background: rgba(0, 0, 0, 0.5); 
-            color: white;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            backdrop-filter: blur(10px);
-        }
-        .dark-mode-toggle:hover {
-            background: rgba(0, 0, 0, 0.3);
-        }
-        .container {
-            display: flex;
-            gap: 20px;
-            padding: 20px;
-            overflow-x: auto;
-            white-space: nowrap;
-            scroll-behavior: smooth;
-            max-width: 90vw;
-        }
-        .game-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            min-width: 150px;
-            transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
-            cursor: pointer;
-        }
-        .game-box:hover {
-            transform: scale(1.1);
-            background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4);
-        }
-        .game-image {
-            width: 80px;
-            height: 80px;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
-        .game-box:hover .game-image {
-            transform: scale(1.2);
-        }
-        .play-button {
-            position: relative;
-            background: linear-gradient(45deg, blue, cyan);
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            overflow: hidden;
-        }
-        .play-button::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.3);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            border-radius: 50%;
-            transition: transform 0.3s;
-        }
-        .play-button:hover {
-            background: linear-gradient(45deg, darkblue, lightblue);
-        }
-        .play-button:active::after {
-            transform: translate(-50%, -50%) scale(1.5);
-        }
-        .light-mode body {
-            background: white;
-            color: black;
-        }
-        .light-mode .game-box {
-            background: rgba(0, 0, 0, 0.1);
-        }
-        .light-mode .game-box:hover {
-            background: rgba(0, 0, 0, 0.2);
-        }
-        .light-mode .play-button {
-            background: linear-gradient(45deg, red, orange);
-        }
-        .light-mode .play-button:hover {
-            background: linear-gradient(45deg, darkred, darkorange);
-        }
-        .light-mode .dark-mode-toggle {
-            background: black;
-            color: white;
-        }
-    </style>
+    <title>Ugphone Mod by khoitongdz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+    <div class="container">
+        <div class="header-logo">
+            <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" alt="UGPhone Logo" class="app-logo">
+        </div>
+        <main class="content">
+            <div class="tab-content">
+                <div class="tab-pane active" id="home">
+                    <div class="home-content ugphone-card">
+                        <div class="bottom-content bottom-center">
+                            <h2 class="ugphone-title">Welcome User to ugphone mod</h2>
+                            <p class="ugphone-subtitle">App develop by khoitongdz</p>
+                            <img src="https://tr.rbxcdn.com/180DAY-433e973b5fbc1e8d5cdebd0c6be03472/420/420/Decal/Webp/noFilter" alt="Welcome Image" class="home-image">
+                            <button class="goto-btn ugphone-button" onclick="switchTab('device-no-vpn')">Goto Device No VPN</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="device-no-vpn">
+                    <div class="dashboard-content ugphone-card">
+                        <div class="devices-container">
+                            <!-- Devices sẽ được thêm động qua JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="device-vpn">
+                    <div class="dashboard-content ugphone-card">
+                        <div class="devices-container">
+                            <!-- Devices sẽ được thêm động qua JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="me">
+                    <div class="profile-header ugphone-card">
+                        <div class="profile">
+                            <img src="https://media.discordapp.net/attachments/1352925168288137216/1354343403713986711/image.png?ex=67e4f215&is=67e3a095&hm=717dac763b9d60703e71d71d375f06c3d463774eddfdeb3dbbcfc3d6359be83e&=&format=webp&quality=lossless&width=509&height=513" alt="Profile Icon" class="profile-icon">
+                            <div>
+                                <p>Me</p>
+                                <p>ID: 12345</p>
+                            </div>
+                        </div>
+                        <div class="welfare">
+                            <p>Welfare Center</p>
+                            <span id="diamond-count">9999999</span> <i class="fas fa-gem"></i>
+                        </div>
+                    </div>
+                    <div class="tab-pane-content ugphone-card">
+                        <h2 class="ugphone-title">My Profile</h2>
+                        <p><strong>ID:</strong> 12345</p>
+                        <p><strong>Welfare Points:</strong> 80</p>
+                        <button class="profile-btn ugphone-button">Edit Profile</button>
+                        <div class="me-links ugphone-links">
+                            <button class="link-btn ugphone-button youtube-btn" onclick="window.open('https://www.youtube.com/channel/UCV5yFlyAvvdCOOrZowLMrnA', '_blank')">Youtube</button>
+                            <button class="link-btn ugphone-button discord-btn" onclick="window.open('https://discord.gg/w26VGWmMPb', '_blank')">Discord</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <nav class="tab-nav ugphone-nav">
+            <button class="tab-button active" data-tab="home"><i class="fas fa-home"></i><span>Home</span></button>
+            <button class="tab-button" data-tab="device-no-vpn"><i class="fas fa-tachometer-alt"></i><span>Device No VPN</span></button>
+            <button class="tab-button" data-tab="device-vpn"><i class="fas fa-tachometer-alt"></i><span>Device VPN</span></button>
+            <button class="tab-button" data-tab="me"><i class="fas fa-user"></i><span>Me</span></button>
+        </nav>
+    </div>
 
-<div class="web-credit">
-    Code:khoitongdz | Server Discord: 
-    <a href="https://discord.gg/w26VGWmMPb" target="_blank" style="color: snow white; text-decoration: none;">Tham gia</a>
-</div> 
-      <div class="container fade-in">
-        <div class="game-box">
-            <div class="game-title">Device 1</div>
-            <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" alt="Device 1" class="game-image">
-            <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUFxIdDhcIHlRKS09KTFQYExoIHgkIVRMPFhc='">Play</button>
-        </div>
-        <div class="game-box">
-            <div class="game-title">Device 2</div>
-            <img src="https://play-lh.googleusercontent.com/3EEJLviqFWAuHJWpmILUotvTfaFtV34KaEDoZrYAhGziOGVaHNbRZ1z7xwG-VdcdxQs" alt="Device 2" class="game-image">
-            <button class="play-button" onclick="window.location.href='https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUHBoXGgMCVgsXGgJWDx4YExUUFxQcAlYXEhYSDx4fVEpLTkpJVA8THlYMGhcQEhUcVh8eGh9WCA4JDRINFAkIVRMPFhc='">Play</button>
-        </div>
-        <div class="game-box">
-            <div class="game-title">Server VIP Free</div>
-            <img src="https://tse1.mm.bing.net/th?id=OVP.JXeiWKksg37_t2sCDjJPjgHgFo&pid=Api&h=360&w=480&c=7&rs=1" alt="Server VIP Free" class="game-image">
-            <button class="play-button" onclick="window.location.href='https://www.roblox.com/es/games/2753915549/Blox-Fruits?privateServerLinkCode=78227368949942947685664999114478'">Play</button>
-        </div><div class="game-box">
-            <div class="game-title">Script blox fruit & Executor</div>
-            <img src="https://media.discordapp.net/attachments/1321869620881129566/1353724109657473107/66713b1a-eaf2-4915-bf92-0abd1ddc2fd6.webp?ex=67e2b152&is=67e15fd2&hm=b11d8d86c5f62682b6bc6b4eabc0bfc8dbb4402322c4aff201a6b848cbfd9bfe&=&format=webp&width=500&height=500" alt="Script" class="game-image">
-            <button class="play-button" onclick="window.location.href='https://khoitongdz.github.io/Executor.xyz/'">Xem</button>
-    <script>
-        function toggleDarkMode() {
-            document.body.classList.toggle("light-mode");
-            let button = document.querySelector(".dark-mode-toggle");
-            if (document.body.classList.contains("light-mode")) {
-                button.textContent = "☀️";
-                localStorage.setItem("darkMode", "off");
-            } else {
-                button.textContent = "🌙";
-                localStorage.setItem("darkMode", "on");
-            }
-        }
-        if (localStorage.getItem("darkMode") === "off") {
-            document.body.classList.add("light-mode");
-            document.querySelector(".dark-mode-toggle").textContent = "☀️";
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
